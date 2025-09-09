@@ -1,0 +1,17 @@
+{
+  "name": "tiptap-dev",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "forwardPorts": [5173],
+  "portsAttributes": { "5173": { "label": "Vite", "onAutoForward": "openBrowser" } },
+  "postCreateCommand": "corepack enable && pnpm install",
+  "postStartCommand": "pnpm --prefix demos run start",
+  "customizations": {
+    "vscode": {
+      "settings": { "git.enableSmartCommit": true },
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
+}
