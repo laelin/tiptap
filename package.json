@@ -30,7 +30,16 @@
     "prepare": "husky install",
     "turbo": "turbo",
     "changeset": "changeset",
-    "version": "pnpm run changeset -- version && pnpm install --no-frozen-lockfile"
+    "version": "pnpm run changeset -- version && pnpm install --no-frozen-lockfile",
+    "docker:dev": "docker compose up",
+    "docker:dev:detached": "docker compose up -d",
+    "docker:dev:logs": "docker compose logs -f",
+    "docker:dev:stop": "docker compose down",
+    "docker:build": "docker build -t tiptap-demos .",
+    "docker:build:clean": "docker build --no-cache -t tiptap-demos .",
+    "docker:prod": "docker run -d -p 3000:80 --name tiptap-prod tiptap-demos",
+    "docker:prod:stop": "docker stop tiptap-prod && docker rm tiptap-prod",
+    "docker:validate": "bash scripts/validate-docker.sh"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",

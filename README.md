@@ -36,6 +36,10 @@ Interested in collaborative editing? Check out our open-source package [Hocuspoc
 
 For more detailed information, make sure to check out our [documentation](https://tiptap.dev/docs/editor/installation). If you encounter any problems or have suggestions for our system, please open an issue.
 
+### Docker Setup
+
+To run Tiptap in a containerized environment, see our [Docker Guide](DOCKER.md) for both development and production setups.
+
 ### Examples, CodeSandbox and UI Templates
 
 Have a look at the [examples to see Tiptap in action](https://tiptap.dev/examples) or review and fork our codesandboxes.

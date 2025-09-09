@@ -6,12 +6,11 @@ RUN corepack enable
 COPY package.json pnpm-lock.yaml* ./
 COPY turbo.json ./
 COPY packages ./packages
-COPY packages-deprecated ./packages-deprecated 2>/dev/null || true
-COPY packages/pm ./packages/pm 2>/dev/null || true
+COPY packages-deprecated ./packages-deprecated
 COPY demos ./demos
-COPY patches ./patches 2>/dev/null || true
+COPY patches ./patches
 COPY tsconfig.* ./
-COPY .eslintrc.* . 2>/dev/null || true
+COPY .eslintrc.* ./
 RUN pnpm install --no-frozen-lockfile
 # full monorepo build, then demos build
 RUN pnpm turbo run build
