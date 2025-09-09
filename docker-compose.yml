@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  web:
+    image: node:20-alpine
+    working_dir: /repo
+    command: sh -lc "corepack enable && pnpm install --no-frozen-lockfile && pnpm --prefix demos run start"
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./:/repo
+    environment:
+      - HOST=0.0.0.0
